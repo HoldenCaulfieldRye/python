@@ -148,3 +148,47 @@ gateur 6
 ...     pass
 ...
 
+
+
+# defining a function
+# 'def' introduces a function definition
+# in brackets is the list of formal parameters, which are alyways called by ref
+# body must be indented
+# """...""" is the documentation string: user can interactively browse through
+# code with it, so good practice ot include one
+>>> def fib(n):                      
+...     """Print a Fibonacci series up to n."""
+...     a, b = 0, 1
+...     while a < n:
+...         print a,
+...         a, b = b, a+b
+...
+# notice fib() has no return statement
+# in fact, compiler adds a null return statement if none is given by programmer
+# 'null' in python is 'none'
+
+# in this other def, there is a reutrn value
+# notice no need to specify return type in opening statement
+>>> def fib2(n): # return Fibonacci series up to n
+...     """Return a list containing the Fibonacci series up to n."""
+...     result = []
+...     a, b = 0, 1
+...     while a < n:
+...         result.append(a)    # see below
+...         a, b = b, a+b
+...     return result
+...
+
+# can specify default values for args
+# achieves same thing as overloading!
+def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
+    while True:
+        ok = raw_input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise IOError('refusenik user')
+        print complaint
