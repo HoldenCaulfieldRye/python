@@ -56,15 +56,33 @@ len(words)
 >>> a
 ['Miled', 'est', 'gros', 'caca', 'boudin']
 
-# insert element in list
->>> a.insert(2) = 'un'
->>> a
-['Miled', 'est', 'un', 'gros', 'caca', 'boudin']
-
 # append to list
 >>> a += 'mais','bon','c\'est','un','mec','cool'
 >>> a
 ['Miled', 'est', 'un', 'gros', 'caca', 'boudin', 'qui', 'pue', 'mais', 'bon', "c'est", 'un', 'mec', 'cool']
+
+# insert
+>>> a.insert(2) = 'un'
+>>> a
+['Miled', 'est', 'un', 'gros', 'caca', 'boudin']
+
+# remove x specifically
+list.remove(x)
+# returns error if x not in there
+
+# pop i-th item (ie remove and return it)
+list.pop(i)
+# returns error if i out of bounds
+
+list.index(x)
+
+list.count(X)
+
+list.sort()
+
+list.reverse()
+
+# can use lists as queues, as stacks
 
 
 # multiple assignment
@@ -192,3 +210,81 @@ def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
         if retries < 0:
             raise IOError('refusenik user')
         print complaint
+
+
+# positional arguments and keyword arguments
+def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+    print "-- This parrot wouldn't", action,
+    print "if you put", voltage, "volts through it."
+    print "-- Lovely plumage, the", type
+    print "-- It's", state, " !"
+
+# notice a space at the end of the string is added too
+# '--' gets printed but also performs NL
+
+
+parrot(1000)
+# valid call wih one positional argument
+# other args take default values
+
+parrot(voltage=1000)
+# valid call with one keyword argument
+# other args take default values
+
+parrot(voltage=34, action='fly')
+# valid call with two keyword arguments
+
+parrot(action='fly', voltage=34)
+# valid call with two keyword arguments
+# you see, position doesn't matter here
+
+
+# and now for invalid calls
+parrot()
+parrot(action='die', 1000) # YEP! positional arguments must go first
+parrot(110, voltage=220) # duplicate value for same argument
+parrot(110, condition='a stiff') # known keyword argument
+
+
+# Lambda expressions
+def make_incrementor(n):
+    return lambda x: x + n
+
+
+>>> def incrementor(n):
+...     return lambda x: x + n
+... 
+>>> f = incrementor(3)
+>>> f(0)
+3
+>>> f(1)
+4
+
+
+# Docstring or documentation strings
+# docstring will be returned after following:
+print function.__doc__
+
+# first line should be a short, concise summary of object's purpose.
+# no need to state the object's name or type, since you can get these
+# via other means.
+# line should start with capital letter and end with full stop.
+
+
+# ---
+
+# 5. Data Structures
+
+# list methods (pasted them by list intro)
+
+# Functional Programming Tools
+
+filter(bool_function, baseList)
+# returns list of args of bool_function(element) is true,
+# element spanning baseList
+
+map(item_function, baseList)
+# returns list of returns of item_function(element),
+# element spanning baseList
+
+
