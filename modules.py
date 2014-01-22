@@ -169,7 +169,95 @@ if __name__ = "__main__":
 
 
  
-# Packages
+# Packages aka Modules & Submodules
 
-# ...
+
+# packages contain modules and enable modules to be called in an object
+# oriented way, eg A.B is module B from package A.
+
+# the real use of packages is to structure the module namespace: just like
+# modules enable a variable name to be used in multiple modules without 
+# clashes, packages enable a module name to be used in multiple packages
+# without clashes.
+
+## packages are modules containing modules. don't really need the term
+## 'package'
+
+
+
+# __init__.py
+
+
+# required to make python treat directories as containing packages
+## does it make the directory a package? or simply signal presence of
+## packages?
+
+# prevents directories with a common name from unintentionally hiding valid
+# modules that occur later on the module search path.
+## to make sure that correct module is selected (since there will exist
+## multiple modules with same names?
+
+# __init__.py can just be an empty file
+
+# can also execute initialization code for the package
+
+# can also set the __all__ variable
+# (see below for more info)
+
+# examples
+# suppose the following file structure:
+
+# sound/                          Top-level package
+#      __init__.py               Initialize the sound package
+#      formats/                  Subpackage for file format conversions
+#              __init__.py
+#              wavread.py
+#              wavwrite.py
+#              aiffread.py
+#              aiffwrite.py
+#              auread.py
+#              auwrite.py
+#              ...
+#      effects/                  Subpackage for sound effects
+#              __init__.py
+#              echo.py
+#              surround.py
+#              reverse.py
+#              ...
+#      filters/                  Subpackage for filters
+#              __init__.py
+#              equalizer.py
+#              vocoder.py
+#              karaoke.py
+#              ...
+
+# import echo module:
+import sound.effects.echo
+# remember sound, effects, echo are all modules, so the function echofilter()
+# needs to be called as:
+sound.effects.echo.echofilter()
+
+# alternatively, import echo module locally as:
+from sound.effects import echo
+# recall this imports module locally, so echofilter() can be called as:
+echofilter()
+
+# alternatively, import echofilter() function locally as:
+ from sound.effects.echo import echofilter()
+
+
+
+# Importing * from a package
+
+# import * imports everything; with packages, should it import all
+# contents of all submodules too? that could waste time
+# so programmer should be explicit about which contents to import
+
+# this is done in the __init__.py file!
+# the list __all__ in __init__.py is the list of module to import
+
+## if __all__ is not defined, I think the import * does nothing
+## (remember, we're only talking about import * from packages here)
+
+
 
