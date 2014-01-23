@@ -46,3 +46,12 @@
 # namespace examples: built-in variable names, variable names local to
 # a module, variable names local to the body of a function
 
+
+
+# Inheritance
+
+# syntax for declaration
+class Subclass(BaseClass):
+
+
+# 
