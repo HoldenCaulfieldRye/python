@@ -99,7 +99,7 @@ if __name__ = "__main__":
 # then the statements will be executed as script
 
 # for example:
-if __name__ = "__main__":
+if __name__ == "__main__":
     import sys
     fib(int(sys.argv[1]))
 # this script imports the sys module, and returns fib(<argument[1]>)
