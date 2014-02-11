@@ -250,7 +250,7 @@ parrot(action='fly', voltage=34)
 parrot()
 parrot(action='die', 1000) # YEP! positional arguments must go first
 parrot(110, voltage=220) # duplicate value for same argument
-parrot(110, condition='a stiff') # known keyword argument
+parrot(110, condition='a stiff') # unknown keyword argument
 
 
 # Lambda expressions
