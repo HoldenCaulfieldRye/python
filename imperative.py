@@ -253,6 +253,15 @@ parrot(110, voltage=220) # duplicate value for same argument
 parrot(110, condition='a stiff') # unknown keyword argument
 
 
+
+# WIDESPREAD PYTHON BEGINNER MISTAKE: mutable default arguments
+http://pythonconquerstheuniverse.wordpress.com/2012/02/15/mutable-default-arguments/
+# that's an awesome article by the way
+# never use a mutable object as default argument - unless you 
+# specifically want the mutability
+
+
+
 # Lambda expressions
 def make_incrementor(n):
     return lambda x: x + n
