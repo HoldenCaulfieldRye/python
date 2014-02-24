@@ -5,6 +5,13 @@
 # PART 1: ACCESSING XML ELEMENTS
 
 
+# Import data
+import xml.etree.ElementTree as ET
+tree = ET.parse('example.xml')
+root = tree.getroot()
+
+
+# Representation of data:
 country         |  rank  | year  | GPD/capita |
 ----------------+--------+-------+------------+
 Liechtenstein   |   1    | 2008  |  141,000   |
@@ -28,19 +35,6 @@ root[2].attrib['name'] |root[2][0].text |root[2][1].text |root[2][2].text |
 ['name']                   # seems a bit hacky
 >>> root.attrib.keys()
 []
-
-
-# Import data
-import xml.etree.ElementTree as ET
-tree = ET.parse('example.xml')
-root = tree.getroot()
-
-
-
-
-
-
-# Child nodes are nested
 
 
 # example xml:
