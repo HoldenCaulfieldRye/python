@@ -98,7 +98,7 @@ batch = np.zeros([32, 20, 32, 3], int)
 batch = np.zeros([32, 20, 3, 32], int)
 # also works
 
-# hyp 4: a batch of mini-batches
+# hyp 1 most likely because you want all R pixels first, then G pixels, then B pixels
 
 # select a patch!
 def patch(tlcoordinates, brcoordinates):

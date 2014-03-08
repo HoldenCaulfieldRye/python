@@ -132,6 +132,18 @@ if __name__ == "__main__":
 # directory).
 
 
+# How to import a user-defined module not in current directory
+import imp
+foo = imp.load_source('module.name', '/path/to/file.py')
+
+# Current directory
+import os
+currentDir = os.getcwd()
+# change directory
+os.chdir(path)
+# make directory
+os.mkdir('dirname')
+
 
 # Byte-compiling
 
