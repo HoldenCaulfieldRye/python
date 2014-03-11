@@ -1,6 +1,12 @@
 
 # Pickle - aka seralize, marshal, flatten
 
+# Unpickle
+# step 1: load/open the pickled file
+import cPickle as pickle
+pickle_file = open(path)
+unpickled = pickle.load(pickle_file)
+
 # serialization: process of translating data structures or object state
 # into a format that can be stored 
 
