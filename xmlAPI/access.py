@@ -37,8 +37,8 @@ root[2].attrib['name'] |root[2][0].text |root[2][1].text |root[2][2].text |
 []
 
 
-# example xml:
-<?xml version="1.0"?>
+# print xml:
+>>> ET.dump(tree) # ET.dump(root) also works
 <data>
     <country name="Liechtenstein">
         <rank>1</rank>

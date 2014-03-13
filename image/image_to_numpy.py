@@ -3,6 +3,14 @@ from PIL import Image
 from PIL import ImageOps
 
 
+# from jpg to numpy
+
+# from numpy to jpg
+img_np = batch[0].copy() # is this image demeaned?
+img_jpg = Image.fromarray(img_np)
+
+
+
 # open image
 >>> im = Image.open('/home/alex/Pictures/nexus1.jpg')
 

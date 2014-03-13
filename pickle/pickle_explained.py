@@ -9,6 +9,7 @@ unpickled = pickle.load(pickle_file)
 
 # serialization: process of translating data structures or object state
 # into a format that can be stored 
+pickle.dump(unpickled, open('pickle_file.wtv', 'wb'))
 
 # converts a python object hierarchy into a byte stream
 
