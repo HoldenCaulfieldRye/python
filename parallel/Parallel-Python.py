@@ -4,22 +4,18 @@
 # examples:
 # http://www.parallelpython.com/content/view/17/31/
 
-import pp
-
-# start pp execution with the number of workers set to the number of
-# processors in the system
-job_server = pp.Server()
-
 
 
 # Submit a job of calulating sum_primes(100) for execution. 
+import math, sys, time, pp
+job_server = pp.Server() # Creates jobserver with automatically detected number of workers
+
+
 # sum_primes - the function
 # (100,) - tuple with arguments for sum_primes
 # (isprime,) - tuple with functions on which function sum_primes depends
 # ("math",) - tuple with module names which must be imported before sum_primes execution
 # Execution starts as soon as one of the workers will become available
-import math, sys, time, pp
-job_server = pp.Server() # Creates jobserver with automatically detected number of workers
 job1 = job_server.submit(sum_primes, (100,), (isprime,), ("math",))
 
 def sum_primes(n):
