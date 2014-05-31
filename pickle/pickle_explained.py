@@ -26,9 +26,11 @@ pickle.dump(unpickled, open('pickle_file.wtv', 'wb'))
 # Usage
 
 # to serialize an object hierarchy:
-# create a pickler
-# call pickler's dump(obj, file, protocol=0) method
-# byte stream will be written to file using protocol
+import cPickle as pickle
+d = {}
+add_data_to(d)
+pickle.dump(d, open('d.pickle', 'wb')) # write, binary
+
 
 # to de-serialize:
 # create an unpickler
@@ -56,6 +58,6 @@ pickle.dump(unpickled, open('pickle_file.wtv', 'wb'))
 
 # written in C, so can be up to 1000 times faster
 
-# does not support subclassing of Pickler and Unpickler classes
-# these are implemented as functions
+# however, does not support subclassing of Pickler and Unpickler
+# classes. these are implemented as functions
 
