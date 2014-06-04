@@ -7,6 +7,10 @@ import cPickle as pickle
 pickle_file = open(path)
 unpickled = pickle.load(pickle_file)
 
+# if binary, need to first read the file
+with open(filename, 'rb') as pickle_file:
+    content = pickle.load(pickle_file)
+
 # serialization: process of translating data structures or object state
 # into a format that can be stored 
 pickle.dump(unpickled, open('pickle_file.wtv', 'wb'))
